@@ -9,9 +9,9 @@ nltk.download('punkt_tab')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-model = pickle.load(open("C:/Users/emanm/OneDrive/Desktop/python/NLP/New folder/model.pkl",'rb'))
+model = pickle.load(open("model.pkl",'rb'))
 
-vectorizer = pickle.load(open("C:/Users/emanm/OneDrive/Desktop/python/NLP/New folder/vectorizer.pkl","rb"))
+vectorizer = pickle.load(open("vectorizer.pkl","rb"))
 
 st.markdown(
     """
