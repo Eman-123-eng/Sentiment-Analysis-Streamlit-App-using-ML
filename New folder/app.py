@@ -5,20 +5,13 @@ import pickle
 import nltk
 from PIL import Image
 
-# nltk.download('punkt_tab')
-# nltk.download('stopwords')
-# nltk.download('wordnet')
+nltk.download('punkt_tab')
+nltk.download('stopwords')
+nltk.download('wordnet')
 
 model = pickle.load(open("C:/Users/emanm/OneDrive/Desktop/python/NLP/New folder/model.pkl",'rb'))
 
 vectorizer = pickle.load(open("C:/Users/emanm/OneDrive/Desktop/python/NLP/New folder/vectorizer.pkl","rb"))
-
-# background_image = Image.open("C:/Users/emanm/OneDrive/Pictures/Screenshots/download.jpeg")
-# st.image(background_image, width=2000)
-
-
-# # Display the title using st.markdown
-
 
 st.markdown(
     """
@@ -66,22 +59,10 @@ text = st.text_input("Please enter your review")
 
 state = st.button("Predict","review")
 
-# Create a container for centered layout
-# container = st.container()
-
-# with container:
-#     # Create a centered column
-#     col1, col2 = st.columns(2)
-
-#     with col1:
-        # Create a centered textbox
 token= helper.preprocessing(text)
 vector = vectorizer.transform([token])
 prediction = model.predict(vector).item()
 
-    # with col2:
-
-# Create a centered button
 if state:
     # Add your prediction logic here
     if prediction == 1:
